@@ -83,7 +83,9 @@ public class SalaView {
         Button misEntradas = new Button("Mis entradas");
         misEntradas.setOnAction(ev -> {
             List<Entrada> entradasCliente = cine.obtenerEntradasDel(cliente);
-                    });
+            new EntradasView(stage, cine, cliente, entradasCliente).mostrar();
+
+        });
 
         root.getChildren().addAll(titulo, comboSalas, grilla, mensaje, misEntradas, salirBtn);
         stage.setTitle("Salas");
